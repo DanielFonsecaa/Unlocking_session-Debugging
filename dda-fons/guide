@@ -1,0 +1,49 @@
+Debugging Session Plan: Explaining Segfault, Conditional Jump, and Double Free in C
+
+1. Introduction
+- Brief overview: Why debugging is important.
+- Explain that these are common runtime errors students will encounter.
+- Mention tools they can use (e.g., gdb, valgrind, printf debugging).
+
+2. Segmentation Fault (Segfault)
+
+What to explain:
+- Definition: A segmentation fault occurs when a program tries to access memory that it shouldn’t (invalid memory access).
+- Causes: Dereferencing NULL pointers, accessing memory beyond allocated arrays, writing to read-only memory, etc.
+- Symptoms: Program crashes abruptly.
+- Example scenarios where segfault might happen.
+
+How to explain:
+- Use a simple analogy: “Imagine your program is trying to open a door that doesn’t belong to it—it’s not allowed, so the system stops it immediately.”
+- Show a small code snippet that causes a segfault (e.g., dereferencing NULL).
+- Demonstrate how to reproduce the segfault.
+- Introduce gdb commands to find the line causing the segfault (run, bt).
+- Show how to check pointers before using them.
+
+3. Conditional Jump or Move Depends on Uninitialized Value
+
+What to explain:
+- Definition: This warning/error happens when the program makes a decision based on a variable that has not been initialized.
+- Why it’s problematic: Using uninitialized variables leads to undefined behavior — the program may behave unpredictably.
+- Common cause: Using local variables without setting a value.
+
+How to explain:
+- Use analogy: “It’s like trying to choose a path without knowing where the signs point—you don’t have valid information, so your decision could be wrong.”
+- Show a code example where a variable is declared but not initialized, then used in a conditional statement.
+- Explain how tools like Valgrind detect this problem.
+- Teach best practices: Always initialize variables before use.
+- Demonstrate fixing the code by initializing variables.
+
+4. Double Free
+
+What to explain:
+- Definition: Double free occurs when a program calls free() more than once on the same memory pointer.
+- Why it’s a problem: Can corrupt the memory allocator’s data structures, cause crashes, or security vulnerabilities.
+- Symptoms: Crashes or undefined behavior when freeing memory.
+
+How to explain:
+- Use analogy: “It’s like throwing away your garbage twice; the second time you throw away something that’s already gone, causing confusion.”
+- Show a code snippet that calls free() twice on the same pointer.
+- Explain how to track memory allocation and freeing.
+- Introduce good memory management habits: set pointers to NULL after freeing.
+- Demonstrate debugging tools like Valgrind to detect double frees.
