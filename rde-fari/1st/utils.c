@@ -6,7 +6,7 @@
 /*   By: rde-fari <rde-fari@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 19:15:05 by rde-fari          #+#    #+#             */
-/*   Updated: 2025/10/15 13:37:46 by rde-fari         ###   ########.fr       */
+/*   Updated: 2025/10/15 14:47:16 by rde-fari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void *ft_calloc(size_t nmemb, size_t size)
 	i = 0;
 	while (i < size * nmemb)
 	{
-		//call[i] = 0;
+		call[i] = 0;
 		i++;
 	}
 	return (call);
@@ -50,7 +50,6 @@ char *ft_substr(char const *s, int start, size_t len)
 		substr[i] = s[start + i];
 		i++;
 	}
-	return (substr);
 }
 
 int ft_strlen(const char *string)
@@ -70,9 +69,9 @@ void	ft_print_array_n_size(char **array)
 	while (array[i])
 	{
 		printf("Array index [%d] = %s\n", i, array[i]);
-		//free(array[i]);
+		free(array[i]);
 		i++;
 	}
-	free(array);
+	//free(array);
 	printf("Array size = %d\n", i + 1);
 }

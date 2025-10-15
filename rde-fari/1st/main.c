@@ -6,7 +6,7 @@
 /*   By: rde-fari <rde-fari@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 19:11:33 by rde-fari          #+#    #+#             */
-/*   Updated: 2025/10/15 13:51:07 by rde-fari         ###   ########.fr       */
+/*   Updated: 2025/10/15 14:50:32 by rde-fari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,6 @@ static void	test_three(char **result)
 {
 	char	**result;
 
-	result = NULL;
 	if (!av || ac != 2)
 		return (printf("Usage: ./debug 'nbr'\n[1] - Test 1\n[2] - Test 2\n[3] - Test 3\n"), 1);
 	if (strcmp(av[1], "1") == 0)
