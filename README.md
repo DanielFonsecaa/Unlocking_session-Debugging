@@ -1,3 +1,8 @@
+# Unlocking Session: Debugging.
+
+Debugging is one of the most essential skills in software development.
+This guide covers the fundamentals of using GDB (GNU Debugger) and Valgrind, two powerful tools for finding logic errors, crashes, and memory issues in C and C++ programs.
+
 
 ## 🐞 1. GDB — GNU Debugger
 
@@ -6,7 +11,7 @@ GDB allows you to run your program step by step, inspect variables, set breakpoi
 ### 🔧 Compilation for Debugging
 To make debugging effective, you must include **debug symbols** when compiling:
 ```bash
-gcc -g3 main.c -o program
+cc -g3 main.c -o program
 ```
 > The `-g3` flag includes full debugging information (like variable names, line numbers, and macros).
 
