@@ -1,0 +1,93 @@
+
+
+━━━━┫ Useful Shell Aliases for Debugging ┣━━━━
+
+
+Aliases can speed up your debugging workflow by automating common tasks like
+compiling, running Valgrind, and reloading your shell configuration.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🪛 Alias debug:
+
+alias debug="clear && [ -f debug ] && rm debug; cc -Wall -Wextra -Werror *.c
+-o debug"
+
+Description:
+This alias clears the terminal, removes any existing debug executable, and
+recompiles all .c files in the current directory into a new executable named
+debug.
+
+Details:
+
+	- "clear" → cleans the terminal for better visibility.
+
+	- "[ -f debug ] && rm debug" → removes the old binary if it exists.
+
+	- "cc -Wall -Wextra -Werror *.c -o debug" → compiles all .c files with
+	strictwarning flags.
+
+Use case:
+Run this alias to quickly rebuild your C project before running it with GDB or
+Valgrind.
+
+Example:
+Shell$ debug
+Shell$ ./debug
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🪛 Alias val:
+
+alias val="valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes"
+
+Description:
+Runs Valgrind with detailed memory leak checking enabled.
+
+Flags explained:
+
+	- "--leak-check=full" → gives a complete memory leak report.
+
+	- "--show-leak-kinds=all" → shows all kinds of memory leaks (definite,
+	   indirect,possible).
+
+	- "--track-origins=yes" → identifies where uninitialized values come from.
+
+Use case:
+Run your compiled program under Valgrind for memory diagnostics:
+
+Example:
+Shell$ val ./debug
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🪛 Alias config:
+
+alias config="vim ~/.zshrc"
+
+Description:
+Opens your Zsh configuration file in Vim, allowing you to edit aliases,
+environment variables, or other shell settings.
+
+Use case:
+Quickly modify your shell setup:
+
+Example:
+Shell$ config
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🪛 Alias restart:
+
+alias restart="source ~/.zshrc"
+
+Description:
+Reloads your shell configuration without closing and reopening the terminal.
+
+Details:
+	- "source ~/.zshrc" → executes your .zshrc file so that any changes take
+	   effect emediately.
+
+Use case:
+After editing your .zshrc, just run:
+
+Shell$ restart
+
+to apply the new configuration instantly.
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━

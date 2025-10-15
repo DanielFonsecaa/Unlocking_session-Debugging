@@ -1,0 +1,52 @@
+🐞 GDB — Utilização Básica (Comandos)
+
+⚙️ Compilação
+Compila o programa com informações de debug:
+gcc -g3 programa.c -o programa
+
+🚀 Iniciação
+gdb ./programa                   # abre o programa no GDB
+gdb ./programa core              # abre com um arquivo core dump
+gdb --args ./programa arg1 arg2  # passa argumentos para o programa
+
+▶️ Execução
+run (ou r)                       # inicia o programa dentro do GDB
+run arg1 arg2                    # executa com argumentos
+start                            # executa até a primeira instrução da main()
+continue (ou c)                  # continua após um breakpoint
+kill                             # termina a execução do programa
+quit (ou q)                      # sai do GDB
+
+🎯 Breakpoints
+break main                       # breakpoint no início da main
+break 25                         # breakpoint na linha 25 do arquivo atual
+break arquivo.c:40               # breakpoint na linha 40 de arquivo.c
+break funcao                     # breakpoint no início de uma função
+info breakpoints                 # lista todos os breakpoints
+delete                           # apaga todos os breakpoints
+delete N                         # apaga breakpoint N
+disable/enable N                 # desativa/ativa breakpoint N
+
+🧭 Navegação
+next (ou n)                      # próxima linha (não entra em funções)
+step (ou s)                      # próxima linha (entra em funções)
+finish                           # executa até sair da função atual
+until 30                         # executa até a linha 30
+
+🔍 Inspeção
+print var                        # imprime o valor de uma variável
+print *ptr                       # imprime o valor apontado por um ponteiro
+display var                      # mostra valor da variável a cada passo
+undisplay                        # remove displays ativos
+info locals                      # mostra variáveis locais da função atual
+info args                        # mostra argumentos da função atual
+backtrace (ou bt)                # mostra stack trace (pilha de chamadas)
+frame N                          # muda para o frame N (na call stack)
+info registers                   # mostra registradores da CPU
+x/10x addr                       # examina memória (10 valores em hexa a partir de addr)
+
+🧩 Comandos Úteis de Controle
+list (ou l)                      # mostra código fonte
+list 20,40                       # mostra linhas de 20 a 40
+info functions                   # lista funções conhecidas
+info variables                   # lista variáveis globais
