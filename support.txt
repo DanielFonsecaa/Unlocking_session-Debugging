@@ -1,0 +1,82 @@
+Comandos a serem ultilizados:
+
+
+
+Valgrind e suas flags:
+valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes
+
+
+
+Compilação com flags:
+cc -Wall -Wextra -Werror *.c -o nome_do_executavel
+
+
+
+Abrir o arquivo de configuração do zsh:
+vim ~/.zshrc
+
+
+
+Reiniciar o zsh:
+source ~/.zshrc
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Alias:
+
+alias debug="clear && [ -f debug ] && rm debug; cc -Wall -Wextra -Werror *.c -o debug"
+
+
+
+
+alias val="valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes"
+
+
+
+
+alias config="vim ~/.zshrc"
+
+
+
+
+alias restart="source ~/.zshrc"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Principais comandos do GDB:

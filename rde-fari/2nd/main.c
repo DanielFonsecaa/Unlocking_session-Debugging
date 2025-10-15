@@ -6,12 +6,11 @@
 /*   By: rde-fari <rde-fari@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 19:11:33 by rde-fari          #+#    #+#             */
-/*   Updated: 2025/10/15 13:31:53 by rde-fari         ###   ########.fr       */
+/*   Updated: 2025/10/15 13:34:25 by rde-fari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "debugSession.h"
-
 
 static void	test_one(char **result)
 {
